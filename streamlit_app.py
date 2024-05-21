@@ -5,7 +5,13 @@ import pandas as pd
 # Title of the app
 st.title('Diabetes Prediction App')
 
-
+# Load your trained model
+try:
+    with open('model.pkl', 'rb') as file:
+        model = pickle.load(file)
+except FileNotFoundError:
+    st.error("Model file not found. Please make sure 'model.pkl' is in the current directory.")
+    st.stop()
 
 # Create input fields for the features
 age = st.number_input('Age', min_value=0, max_value=100, value=25)
