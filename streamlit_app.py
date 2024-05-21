@@ -1,7 +1,6 @@
 import streamlit as st
 import pickle
 import pandas as pd
-pip install scikit-learn
 
 # Title of the app
 st.title('Diabetes Prediction App')
